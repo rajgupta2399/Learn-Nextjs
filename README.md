@@ -36,7 +36,7 @@ In React.js, Client-Side Rendering is the default approach. Here's how it works:
 - React Components are shipped as JavaScript files.
 - The browser executes the JavaScript to render components on the screen.
 - React leverages a Virtual DOM to efficiently update only the parts of the UI that have changed, making CSR faster than traditional full-page reloads.
-<br>
+
 🚀 Benefits of CSR:
 
 - 🔄 Dynamic Updates: React components can update without a full page reload, making the app feel smooth and fast.
