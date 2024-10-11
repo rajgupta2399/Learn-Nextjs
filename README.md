@@ -29,7 +29,7 @@ In CSR:
 - 🏁 Initial Load: The browser downloads a minimal HTML file along with JavaScript files.
 - ⚙️ Rendering: JavaScript runs in the browser to dynamically build the content and render the user interface.
 - 🚀 Interaction: Once the JavaScript is loaded, the app becomes highly interactive as it can fetch and display new data without reloading the entire page.
-<br>
+
 💻 CSR in React
 In React.js, Client-Side Rendering is the default approach. Here's how it works:
 
