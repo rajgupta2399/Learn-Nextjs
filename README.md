@@ -58,7 +58,7 @@ In React.js, Client-Side Rendering is the default approach. Here's how it works:
 Server-side rendering (SSR) is a technique for rendering web content on the server-side, i.e., before the page is sent to the client.
 In server-side rendering, the server generates the HTML for a page, which is then sent to the client. This is in contrast to client-side rendering, where the HTML is generated on the client-side, using JavaScript to render content in the browser.
 With SSR, the server receives a request from the client and generates the HTML for the requested page. The resulting HTML is then sent to the client, which can display it in the browser.
-
+<br>
 <img src="./Assets/SSR.png"/>
 <hr/> 
 <br>
