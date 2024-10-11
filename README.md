@@ -62,6 +62,7 @@ With SSR, the server receives a request from the client and generates the HTML f
 <hr/> 
 💬 Differences Between Client-Side and Server-Side Rendering (CSR vs. SSR) ?
 
+
 - 🛠 Rendering Process
 
 → Client-Side Rendering (CSR): The rendering process occurs in the client's browser. The server only provides a minimal HTML file, and the browser executes JavaScript to render the page.
