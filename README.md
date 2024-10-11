@@ -1,4 +1,5 @@
 ## ❤️ Learning Next.js 🚀
+
 I'm diving into Next.js, and it's so exciting! 🎉 It's amazing how it simplifies React for full-stack development, especially with server-side rendering (SSR) and API routes. I'm just getting started, but I'm loving the performance benefits and the streamlined workflow! ⚡️
 
 💬 What is Next.js?
@@ -15,6 +16,7 @@ Next.js is a React framework for building full-stack web applications. With Next
 React.js is an open-source JavaScript library for building user interfaces, particularly for single-page applications. It allows you to create reusable UI components and manage the state of your application efficiently.
 
 🔥 Key Features of React:
+
 - Component-based architecture: Build encapsulated components that manage their own state, then compose them to create complex UIs.
 - Virtual DOM: React uses a virtual DOM to efficiently update and render only the necessary components, improving performance. ⚡
 - Declarative syntax: Write clean, readable code by describing what the UI should look like, not how to get there.
@@ -47,3 +49,10 @@ In React.js, Client-Side Rendering is the default approach. Here's how it works:
 
 - ⏳ Initial Load Time: The first load might be slower since the browser needs to download and execute JavaScript before rendering the UI.
 - 🔍 SEO Challenges: Since the initial HTML is minimal, search engine crawlers might not index the content effectively.
+
+💬 What is Server-Side-Rendering (SSR)?
+<br>
+Server-side rendering (SSR) is a technique for rendering web content on the server-side, i.e., before the page is sent to the client.
+In server-side rendering, the server generates the HTML for a page, which is then sent to the client. This is in contrast to client-side rendering, where the HTML is generated on the client-side, using JavaScript to render content in the browser.
+With SSR, the server receives a request from the client and generates the HTML for the requested page. The resulting HTML is then sent to the client, which can display it in the browser.
+<img src="./Assets/SSR.png"/>
