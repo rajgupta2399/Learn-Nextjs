@@ -63,27 +63,27 @@ With SSR, the server receives a request from the client and generates the HTML f
 💬 Differences Between Client-Side and Server-Side Rendering (CSR vs. SSR) ?
 
 - 🛠 Rendering Process
-
 → Client-Side Rendering (CSR): The rendering process occurs in the client's browser. The server only provides a minimal HTML file, and the browser executes JavaScript to render the page.
+<br>
 → Server-Side Rendering (SSR): The rendering process occurs on the server, which sends the fully-rendered HTML file to the browser. This means the page is ready for display upon loading.
 
 - 🌐 SEO
-
 → CSR: Search engines struggle to properly index pages rendered on the client because they often encounter a blank or minimal page on their initial crawl.
+<br>
 → SSR: SSR sends fully-rendered HTML to the browser, which allows search engines to properly analyze, index, and rank the content. Better for SEO.
 
 - ⏳ Initial Page Load Time
-
 → CSR: Slower initial page load, as the browser must download and execute JavaScript before rendering the UI.
+<br>
 → SSR: Faster initial page load, as the fully-rendered HTML is served directly from the server, providing content immediately.
 
 - ⚡️ Interactivity
-
 → CSR: Offers highly interactive and dynamic experiences because rendering happens directly in the browser. Users can interact with the page without reloading.
+<br>
 → SSR: UI updates require a round-trip to the server, which can limit interactivity and make updates feel slower compared to CSR.
 
 - 🖼 User Experience
-
 → CSR: Users may initially see an empty page or loading indicator before the JavaScript fetches and renders the UI.
+<br>
 → SSR: Users immediately see a fully-rendered page on first load, providing a smoother and faster visual experience.
 <hr>
