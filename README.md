@@ -56,4 +56,6 @@ Server-side rendering (SSR) is a technique for rendering web content on the serv
 In server-side rendering, the server generates the HTML for a page, which is then sent to the client. This is in contrast to client-side rendering, where the HTML is generated on the client-side, using JavaScript to render content in the browser.
 With SSR, the server receives a request from the client and generates the HTML for the requested page. The resulting HTML is then sent to the client, which can display it in the browser.
 <br/>
+<br/>
+
 <img src="./Assets/SSR.png"/>
