@@ -142,3 +142,56 @@ Once the installation is complete, you'll find that Next.js has generated a defa
 - README.md file: A markdown file where you can provide information about your project, such as setup instructions and documentation.
 
 ### 🔥 Next Js Routing
+
+- Static Routes
+
+All the files in our pages directory having .js, .jsx, .ts and .tsx are automatically routed. The index.js is the root directory. For Example: If we create a file in the pages directory named index.js. Then it could be accessed by going to http://localhost:3000/
+
+```bash
+// pages/index.js.js
+
+const Home = () => {
+    return(
+        <div>
+            Home Page
+        </div>
+    );
+}
+export default Home;
+```
+
+- Nested Routes
+
+If we create a nested folder structure, our routes will also be structured in the same manner. For Example: If we create a new folder called users and create a new file called about.js within it, we can access this file by visiting http://localhost:3000/users/about
+
+```bash
+// pages/user/About.js
+
+const About = () => {
+    return(
+        <div>
+            About Page
+        </div>
+    );
+}
+export default About;
+```
+
+- Dynamic Routes
+
+We can also accept URL parameters and create dynamic routes using the bracket syntax. For Example: If we create a new page in the pages directory called [id].js then the component exported from this file, could access the parameter id and render content accordingly. This can be accessed by going to localhost:3000/<Any Dynamic Id>.
+
+```bash
+// pages/users/[id].js
+
+import { useRouter } from 'next/router';
+
+const User= () => {
+  const router = useRouter();
+  const { id } = router.query;
+
+  return <p>User: {id}</p>;
+};
+
+export default User;
+```
