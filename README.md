@@ -402,8 +402,8 @@ export default UsersPage;
 
 - Static Site Generators (SSGs) are tools for producing HTML in advance so a server can efficiently send the same content to all visitors without creating it first. Unlike dynamic web pages, where a server may query a database on page load and populate templates, an SSG pre-builds the files so that when you deploy them, the server has less work to do when your website is visited.
 
-- SSGs have several benefits, such as faster loading time and better visitor user experience. For developers, scalability is also convenient with static sites as you can cache and serve entire websites in Content Delivery Networks (CDNs) instead of deploying more servers. 
- 
+- SSGs have several benefits, such as faster loading time and better visitor user experience. For developers, scalability is also convenient with static sites as you can cache and serve entire websites in Content Delivery Networks (CDNs) instead of deploying more servers.
+
 - SSG means Static Site Generation in next js when we have to make an api call and store in npm run build. The Api call and the data store in file and make a ready HTML page during build the project. so the page loads in the browser very fast in case of Client Side and Server Side Data fetching in Next js.
 
 ```bash
@@ -430,9 +430,11 @@ export default async function PostsPage() {
   );
 }
 ```
+
 ```bash
   npm run build && npm run start
 ```
+
 - You should see something like this:
 
 ```bash
@@ -455,3 +457,19 @@ Route (app)                              Size     First Load JS
 
 ○  (Static)  prerendered as static content
 ```
+
+#### Understanding SSG in Next.js apps
+
+- Pre-rendering
+
+1. During the build process, all the pages of a website are pre-rendered into static HTML files. The content is generated once and stored as static files.
+
+- Content sources
+
+1. You can source content from various places, such as a headless CMS, databases, or REST APIs.
+2. The content is fetched and processed to create HTML files during the build process.
+
+- Deployment
+
+1. You can cache and efficiently serve the built files using a web server or Content Delivery Network (CDN). If you know the files do not change, you can be more aggressive with caching, which is more efficient for visitors and your server costs.
+2. You don't have to consider provisioning and maintaining an environment for server-side logic.
