@@ -195,3 +195,8 @@ const User= () => {
 
 export default User;
 ```
+
+### 🔥 Next Js Client Side Data fetching
+### 🔥 Next Js Server Side Data fetching
+### 🔥 Next Js Static Site Generation
+
