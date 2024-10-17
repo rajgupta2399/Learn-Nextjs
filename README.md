@@ -429,3 +429,25 @@ export default async function PostsPage() {
 ```bash
   npm run build && npm run start
 ```
+- You should see something like this:
+
+```bash
+ Creating an optimized production build ...
+✓ Compiled successfully
+✓ Linting and checking validity of types
+✓ Collecting page data
+✓ Generating static pages (6/6)
+✓ Collecting build traces
+✓ Finalizing page optimization
+
+Route (app)                              Size     First Load JS
+┌ ○ /                                    5.42 kB        92.4 kB
+├ ○ /_not-found                          871 B          87.9 kB
+└ ○ /posts                               137 B          87.2 kB
++ First Load JS shared by all            87 kB
+ ├ chunks/23-ef3c75ca91144cad.js        31.5 kB
+ ├ chunks/fd9d1056-2821b0f0cabcd8bd.js  53.6 kB
+ └ other shared chunks (total)          1.87 kB
+
+○  (Static)  prerendered as static content
+```
