@@ -197,6 +197,163 @@ export default User;
 ```
 
 ### 🔥 Next Js Client Side Data fetching
-### 🔥 Next Js Server Side Data fetching
-### 🔥 Next Js Static Site Generation
 
+- Client-side data fetching is useful when your page doesn't require SEO indexing, when you don't need to pre-render your data, or when the content of your pages needs to update frequently. Unlike the server-side rendering APIs, you can use client-side data fetching at the component level.
+
+- If done at the page level, the data is fetched at runtime, and the content of the page is updated as the data changes. When used at the component level, the data is fetched at the time of the component mount, and the content of the component is updated as the data changes.
+
+- It's important to note that using client-side data fetching can affect the performance of your application and the load speed of your pages. This is because the data fetching is done at the time of the component or pages mount, and the data is not cached
+
+#### Client-side data fetching with useEffect
+
+- create the user name Folder inside the app folder and inside the user folder create the index.js/pages.js
+- inside the page.js create the Userspage Component and call the api with the help of useEffect
+
+```bash
+"use client";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+
+const Userspage = () => {
+  const [user, setUser] = useState([]);
+  console.log(user);
+
+  useEffect(() => {
+    async function fetchUsers(params) {
+      const data = await fetch("https://dummyjson.com/users");
+      setUser(await data.json());
+    }
+    fetchUsers();
+  }, []);
+  return (
+    <div>
+      {user &&
+        user.users &&
+        user.users.map((user) => (
+          <Link key={user.id} href={`/users/${user.id}`}>
+            <div>{user.firstName}</div>
+          </Link>
+        ))}
+    </div>
+  );
+};
+
+export default Userspage;
+```
+
+- Now make the dynmaic routes for each individual users redirect to the users/[id]/page
+
+```bash
+"use client";
+import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
+
+const UserDetailPage = () => {
+  const { id } = useParams(); // Access dynamic route parameter
+  const [userInfo, setUserInfo] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    if (id) {
+      // Ensure 'id' is defined before fetching
+      const fetchUserById = async () => {
+        try {
+          const response = await fetch(`https://dummyjson.com/users/${id}`);
+          if (!response.ok) {
+            throw new Error("Failed to fetch user data");
+          }
+          const data = await response.json();
+          setUserInfo(data);
+        } catch (err) {
+          setError(err.message);
+        } finally {
+          setLoading(false);
+        }
+      };
+      fetchUserById();
+    }
+  }, [id]); // Rerun effect if 'id' changes
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  return (
+    <div>
+      {userInfo && (
+        <>
+          <h1>
+            {userInfo.firstName} {userInfo.lastName}
+          </h1>
+          <p>Email: {userInfo.email}</p>
+          <p>Username: {userInfo.username}</p>
+        </>
+      )}
+    </div>
+  );
+};
+
+export default UserDetailPage;
+```
+
+- This is client data fetching with the help of useEffect.
+
+#### Client-side data fetching with SWR
+
+- The team behind Next.js has created a React hook library for data fetching called SWR. It is highly recommended if you are fetching data on the client-side. It handles caching, revalidation, focus tracking, refetching on intervals, and more.
+
+- Using the same example as above, we can now use SWR to fetch the profile data. SWR will automatically cache the data for us and will revalidate the data if it becomes stale.
+
+```bash
+"use client";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import useSWR from "swr";
+
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
+
+const Userspage = () => {
+
+  // const [user, setUser] = useState([]);
+  // console.log(user);
+
+  // useEffect(() => {
+  //   async function fetchUsers(params) {
+  //     const data = await fetch("https://dummyjson.com/users");
+  //     setUser(await data.json());
+  //   }
+  //   fetchUsers();
+  // }, []);
+
+  const { data, error } = useSWR("https://dummyjson.com/users", fetcher);
+  if (error) {
+    return <h1>Error Happen</h1>;
+  }
+
+  if (!data) {
+    return <h1>Loading</h1>;
+  }
+
+  return (
+    <div>
+      {data.users &&
+        data.users.map((user) => (
+          <Link key={user.id} href={`/users/${user.id}`}>
+            <div>{user.firstName}</div>
+          </Link>
+        ))}
+    </div>
+  );
+};
+
+export default Userspage;
+```
+
+### 🔥 Next Js Server Side Data fetching
+
+### 🔥 Next Js Static Site Generation
