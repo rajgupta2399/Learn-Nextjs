@@ -28,12 +28,12 @@ const Userspage = () => {
 
   return (
     <div>
-      {data.users &&
-        data.users.map((user) => (
-          <Link key={user.id} href={`/users/${user.id}`}>
-            <div>{user.firstName}</div>
-          </Link>
-        ))}
+    {data.users &&
+      data.users.map((user) => (
+        <Link key={user.id} href={`/users/${user.id}`}>
+          <div>{user.firstName}</div>
+        </Link>
+      ))}
     </div>
   );
 };
