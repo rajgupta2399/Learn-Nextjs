@@ -400,6 +400,10 @@ export default UsersPage;
 
 ### 🔥 Next Js Static Site Generation
 
+- Static Site Generators (SSGs) are tools for producing HTML in advance so a server can efficiently send the same content to all visitors without creating it first. Unlike dynamic web pages, where a server may query a database on page load and populate templates, an SSG pre-builds the files so that when you deploy them, the server has less work to do when your website is visited.
+
+- SSGs have several benefits, such as faster loading time and better visitor user experience. For developers, scalability is also convenient with static sites as you can cache and serve entire websites in Content Delivery Networks (CDNs) instead of deploying more servers. 
+ 
 - SSG means Static Site Generation in next js when we have to make an api call and store in npm run build. The Api call and the data store in file and make a ready HTML page during build the project. so the page loads in the browser very fast in case of Client Side and Server Side Data fetching in Next js.
 
 ```bash
