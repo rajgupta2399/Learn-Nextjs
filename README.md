@@ -399,6 +399,9 @@ export default UsersPage;
 - Server Side Data Fetching > Client Side Data Fetching
 
 ### 🔥 Next Js Static Site Generation
+
+- SSG means Static Site Generation in next js when we have to make an api call and store in npm run build. The Api call and the data store in file and make a ready HTML page during build the project. so the page loads in the browser very fast in case of Client Side and Server Side Data fetching in Next js.
+
 ```bash
 import React from "react";
 import styles from "../page.module.css";
