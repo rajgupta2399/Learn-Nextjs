@@ -426,3 +426,6 @@ export default async function PostsPage() {
   );
 }
 ```
+```bash
+  npm run build && npm run start
+```
